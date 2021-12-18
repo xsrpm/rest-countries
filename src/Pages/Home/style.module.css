@@ -1,0 +1,19 @@
+main {
+  padding-inline: 16px;
+  padding-block-start: 24px;
+}
+
+main > article:first-of-type {
+  margin-block-end: 40px;
+}
+
+main > article:nth-of-type(2) {
+  margin-block-end: 32px;
+}
+
+.ulList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}

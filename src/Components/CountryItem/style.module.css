@@ -1,0 +1,30 @@
+.width264 {
+  inline-size: 264px;
+}
+.height160 {
+  block-size: 160px;
+}
+.height336 {
+  block-size: 336px;
+}
+img {
+  border-radius: 5px 5px 0px 0px;
+}
+p {
+  font-size: 1.5rem;
+}
+p span:first-of-type {
+  font-weight: 600;
+}
+p span:last-of-type {
+  font-weight: 100;
+}
+
+section {
+  padding-block-start: 30px;
+  padding-inline: 25px;
+}
+
+h2 {
+  margin-block-end: 22px;
+}

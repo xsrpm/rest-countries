@@ -1,0 +1,42 @@
+.filter {
+  position: relative;
+}
+
+.buttonFilter {
+  font-size: 1.3rem;
+  padding-block-start: 18.5px;
+  padding-block-end: 17.5px;
+  padding-inline-start: 24px;
+  padding-inline-end: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  block-size: 46px;
+}
+
+.buttonFilter:hover {
+  cursor: pointer;
+}
+.listFilter {
+  display: none;
+  margin-block-start: 4px;
+  padding-block: 20px;
+  padding-inline: 24px;
+  list-style: none;
+  block-size: 144px;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 1.3rem;
+  font-weight: 600;
+  position: absolute;
+}
+
+.listFilter.show {
+  display: flex;
+}
+
+.width200 {
+  inline-size: 200px;
+}

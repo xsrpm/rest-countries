@@ -1,0 +1,30 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* outline: 1px dashed red; */
+}
+
+:root {
+  /*Neutral*/
+  --DarkBlue-DarkModeElements: hsl(209, 23%, 22%);
+  --VeryDarkBlue-DarkModeBackground: hsl(207, 26%, 17%);
+  --VeryDarkBlue-LightModeText: hsl(200, 15%, 8%);
+  --DarkGray-LightModeInput: hsl(0, 0%, 52%);
+  --VeryLightGray-LightModeBackground: hsl(0, 0%, 98%);
+  --White-DarkModeTextYLightModeElements: hsl(0, 0%, 100%);
+
+  font-size: 62.5%;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+body {
+  /*font-size: 1.6rem;*/
+  background-color: var(--VeryLightGray-LightModeBackground);
+}
+
+.element {
+  background-color: var(--White-DarkModeTextYLightModeElements);
+  box-shadow: -1px 2px 5px 5px rgb(189 180 180 / 8%);
+  border-radius: 5px;
+}

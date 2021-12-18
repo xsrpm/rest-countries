@@ -1,0 +1,14 @@
+.search {
+  display: flex;
+  gap: 25px;
+  padding: 15px;
+  align-items: stretch;
+}
+
+.search input {
+  border: 0px;
+  font-family: 'Nunito Sans', sans-serif;
+  outline: none;
+  inline-size: -webkit-fill-available;
+  inline-size: -moz-available;
+}
