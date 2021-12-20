@@ -9,7 +9,7 @@ export function Home({ params }) {
     params.region
   )
   return (
-    <main>
+    <main className={style.Home}>
       <Search inputSearch={inputSearch} onChange={onChangeInputSearch} />
       <Filter />
       <ul className={style.ulList}>

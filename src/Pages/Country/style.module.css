@@ -1,0 +1,61 @@
+.Country {
+  padding-inline: var(--MobileBodyPaddingInline);
+  padding-block-start: 24px;
+}
+
+.Country > button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.Country > button svg {
+  height: 18px;
+}
+
+.Country article {
+  margin-block-start: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.Country h2 {
+  font-weight: 700;
+  font-size: 2.3rem;
+  margin-block-end: 30px;
+}
+
+.Country section ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-block-end: 30px;
+}
+
+.Country section ul li {
+  font-size: 1.4rem;
+  list-style: none;
+}
+
+.Country li span:first-of-type {
+  font-weight: 600;
+}
+
+.Country section > div {
+  font-size: 1.45rem;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.Country section div h3 {
+  font-weight: 600;
+  font-size: 1.65rem;
+}
+
+.Country section div div {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+}

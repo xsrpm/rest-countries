@@ -8,7 +8,16 @@ export function CountryItem({
   capital
 }) {
   return (
-    <article className={'element ' + style.height336 + ' ' + style.width264}>
+    <article
+      className={
+        'element ' +
+        style.CountryItem +
+        ' ' +
+        style.height336 +
+        ' ' +
+        style.width264
+      }
+    >
       <picture>
         <img
           className={style.width264 + ' ' + style.height160}
