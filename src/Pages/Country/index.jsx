@@ -1,14 +1,26 @@
 import { useState, useEffect } from 'https://cdn.skypack.dev/react@v17.0.1'
-import { useLocation } from 'https://cdn.skypack.dev/wouter@2.7.5'
+import { Link, useLocation } from 'https://cdn.skypack.dev/wouter@2.7.5'
 import style from './style.module.css'
 export function Country({ params }) {
   const [location, setLocation] = useLocation()
   const [countryData, setCountryData] = useState(null)
+  const [countryBorders, setCountryBorders] = useState(null)
   useEffect(() => {
     fetch(`https://restcountries.com/v3.1/name/${params.country}`)
       .then((res) => res.json())
       .then((data) => {
         setCountryData(data[0])
+        /** begin country borders fetch */
+        if (data[0].borders) {
+          fetch(
+            `https://restcountries.com/v3.1/alpha?codes=${data[0].borders.join()}`
+          )
+            .then((res) => res.json())
+            .then((borders) => {
+              setCountryBorders(borders)
+            })
+        }
+        /** end country borders fetch */
       })
   }, [params])
   if (countryData === null) return <div>Loading...</div>
@@ -73,14 +85,26 @@ export function Country({ params }) {
               <span>{Object.values(countryData.languages).join(', ')}</span>
             </li>
           </ul>
-          <div>
-            <h3>Border Countries:</h3>
+          {countryData.borders && (
             <div>
-              <button className='button'>France</button>
-              <button className='button'>Germany</button>
-              <button className='button'>Netherlands</button>
+              <h3>Border Countries:</h3>
+              <div>
+                {countryBorders &&
+                  countryBorders.map((country) => (
+                    <Link
+                      key={country.name.common}
+                      href={'/country/' + country.name.common}
+                    >
+                      <a href=''>
+                        <button className='button'>
+                          {country.name.common}
+                        </button>
+                      </a>
+                    </Link>
+                  ))}
+              </div>
             </div>
-          </div>
+          )}
         </section>
       </article>
     </main>

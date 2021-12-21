@@ -5,7 +5,6 @@ import { Home } from '../Pages/Home'
 import './style.css'
 
 export function App() {
-  console.log('App')
   return (
     <>
       <Header />
