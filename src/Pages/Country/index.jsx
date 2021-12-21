@@ -16,8 +16,8 @@ export function Country() {
       <article>
         <picture>
           <img
-            src='https://www.countryflags.io/us/flat/64.png'
-            alt='United States'
+            src='https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Peru.svg'
+            alt='Perú'
           />
         </picture>
         <section>

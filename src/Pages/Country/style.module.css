@@ -20,9 +20,18 @@
   gap: 30px;
 }
 
+.Country article img {
+  width: -webkit-fill-available;
+  width: -moz-available;
+}
+
 .Country h2 {
   font-weight: 700;
   font-size: 2.3rem;
+  margin-block-end: 30px;
+}
+
+.Country section {
   margin-block-end: 30px;
 }
 
@@ -58,4 +67,71 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   gap: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .Country {
+    padding-inline: var(--DesktopBodyPaddingInline);
+    padding-block-start: 40px;
+  }
+
+  .Country article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .Country h2 {
+    font-size: 2.6rem;
+    grid-column: 1/3;
+  }
+
+  .Country article {
+    gap: 120px;
+  }
+
+  .Country article img {
+    max-width: 560px;
+    width: 100%;
+  }
+
+  .Country section {
+    margin-block-end: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  .Country section ul {
+    gap: 20px;
+    margin-block-end: 40px;
+  }
+
+  .Country li span:first-of-type {
+    font-size: 1.6rem;
+  }
+
+  .Country section > div {
+    font-size: 1.7rem;
+    grid-column: 1/3;
+  }
+
+  .Country section div h3 {
+    font-size: 1.9rem;
+  }
+
+  .Country section div div {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .Country section > div {
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+  .Country section div div {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
