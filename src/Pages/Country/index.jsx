@@ -1,8 +1,20 @@
+import { useState, useEffect } from 'https://cdn.skypack.dev/react@v17.0.1'
+import { useLocation } from 'https://cdn.skypack.dev/wouter@2.7.5'
 import style from './style.module.css'
-export function Country() {
+export function Country({ params }) {
+  const [location, setLocation] = useLocation()
+  const [countryData, setCountryData] = useState(null)
+  useEffect(() => {
+    fetch(`https://restcountries.com/v3.1/name/${params.country}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setCountryData(data[0])
+      })
+  }, [params])
+  if (countryData === null) return <div>Loading...</div>
   return (
     <main className={style.Country}>
-      <button className='button'>
+      <button className='button' onClick={() => setLocation('/')}>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           width='24'
@@ -15,47 +27,50 @@ export function Country() {
       </button>
       <article>
         <picture>
-          <img
-            src='https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Peru.svg'
-            alt='Perú'
-          />
+          <img src={countryData.flags.svg} alt={countryData.name.common} />
         </picture>
         <section>
-          <h2>Belgium</h2>
+          <h2>{countryData.name.common} </h2>
           <ul>
             <li>
               <span>Native Name: </span>
-              <span>Lorem ipsum dolor</span>
+              <span>
+                {Object.entries(countryData.name.nativeName).pop()[1].common}
+              </span>
             </li>
             <li>
               <span>Population: </span>
-              <span>Lorem ipsum dolor</span>
+              <span>{countryData.population}</span>
             </li>
             <li>
               <span>Region: </span>
-              <span>Lorem ipsum dolor</span>
+              <span>{countryData.region}</span>
             </li>
             <li>
               <span>Sub Region: </span>
-              <span>Lorem ipsum dolor</span>
+              <span>{countryData.subregion}</span>
             </li>
             <li>
               <span>Capital: </span>
-              <span>Lorem ipsum dolor</span>
+              <span>{countryData.capital}</span>
             </li>
           </ul>
           <ul>
             <li>
               <span>Top Level Domain: </span>
-              <span>Lorem ipsum dolor</span>
+              <span>{countryData.tld}</span>
             </li>
             <li>
               <span>Currencies: </span>
-              <span>Lorem ipsum dolor</span>
+              <span>
+                {Object.values(countryData.currencies)
+                  .map((elem) => elem.name)
+                  .join(', ')}
+              </span>
             </li>
             <li>
               <span>Languages: </span>
-              <span>Lorem ipsum dolor</span>
+              <span>{Object.values(countryData.languages).join(', ')}</span>
             </li>
           </ul>
           <div>

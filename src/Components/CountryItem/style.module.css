@@ -1,3 +1,7 @@
+article.CountryItem {
+  cursor: pointer;
+}
+
 .CountryItem section {
   padding-block-start: 30px;
   padding-inline: 25px;

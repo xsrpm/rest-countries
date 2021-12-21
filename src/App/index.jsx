@@ -11,9 +11,7 @@ export function App() {
       <Header />
       <Switch>
         <Route path='/region/:region' component={Home} />
-        <Route path='/country'>
-          <Country />
-        </Route>
+        <Route path='/country/:country' component={Country} />
         <Route path='/'>
           {(params) => <Home params={{ region: 'africa' }} />}
         </Route>
