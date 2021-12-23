@@ -3,14 +3,9 @@ import { Link } from 'https://cdn.skypack.dev/wouter@2.7.5'
 import style from './style.module.css'
 
 export function Filter({ styleTheme }) {
-  const listRef = useRef(null)
-  const onClick = (e) => {
-    listRef.current.classList.toggle(style.show)
-  }
   return (
     <article className={style.filter}>
       <section
-        onClick={onClick}
         className={
           'element ' +
           style.width200 +
@@ -31,7 +26,6 @@ export function Filter({ styleTheme }) {
         </svg>
       </section>
       <ul
-        ref={listRef}
         className={
           'element ' +
           style.width200 +

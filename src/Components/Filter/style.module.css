@@ -2,6 +2,14 @@
   position: relative;
 }
 
+.filter:hover {
+  cursor: pointer;
+}
+
+.filter:hover .listFilter {
+  display: flex;
+}
+
 .buttonFilter {
   font-size: 1.3rem;
   padding-block-start: 18.5px;
@@ -15,9 +23,6 @@
   block-size: 46px;
 }
 
-.buttonFilter:hover {
-  cursor: pointer;
-}
 .listFilter {
   display: none;
   margin-block-start: 4px;
@@ -31,10 +36,6 @@
   font-size: 1.3rem;
   font-weight: 600;
   position: absolute;
-}
-
-.listFilter.show {
-  display: flex;
 }
 
 .width200 {
