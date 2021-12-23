@@ -1,4 +1,4 @@
-import { useState } from 'https://cdn.skypack.dev/react@v17.0.1'
+import { useState } from 'react'
 
 export function useLocalStorage(key, initialValue) {
   // State to store our value

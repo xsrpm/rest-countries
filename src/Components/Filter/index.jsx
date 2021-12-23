@@ -1,5 +1,5 @@
-import { useRef } from 'https://cdn.skypack.dev/react@v17.0.1'
-import { Link } from 'https://cdn.skypack.dev/wouter@2.7.5'
+import { useRef } from 'react'
+import { Link } from 'wouter'
 import style from './style.module.css'
 
 export function Filter({ styleTheme }) {

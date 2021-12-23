@@ -1,5 +1,4 @@
-import { useState } from 'https://cdn.skypack.dev/react@v17.0.1'
-import { Switch, Route } from 'https://cdn.skypack.dev/wouter@2.7.5'
+import { Switch, Route } from 'wouter'
 import { Country } from '../Pages/Country'
 import { Header } from '../Components/Header'
 import { Home } from '../Pages/Home'
@@ -8,7 +7,6 @@ import './style.css'
 
 export function App() {
   const [styleTheme, setStyleTheme] = useLocalStorage('styleTheme', 'light')
-  //const [styleTheme, setStyleTheme] = useState('light')
   if (styleTheme !== 'light')
     document.getElementsByTagName('body')[0].classList.add('darkMode')
   return (

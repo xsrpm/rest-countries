@@ -1,4 +1,4 @@
-import { Link } from 'https://cdn.skypack.dev/wouter@2.7.5'
+import { Link } from 'wouter'
 import style from './style.module.css'
 import { useCountry } from './useCountry'
 export function Country({ params, styleTheme }) {

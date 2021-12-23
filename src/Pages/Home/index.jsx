@@ -3,7 +3,7 @@ import { Filter } from '../../Components/Filter'
 import { Search } from '../../Components/Search'
 import style from './style.module.css'
 import { useHome } from './useHome'
-import { Link } from 'https://cdn.skypack.dev/wouter@2.7.5'
+import { Link } from 'wouter'
 
 export function Home({ params, styleTheme }) {
   const [filteredCountries, onChangeInputSearch, inputSearch] = useHome(

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'https://cdn.skypack.dev/react@v17.0.1'
+import { useState, useEffect } from 'react'
 export function useHome(region) {
   const [countries, setCountries] = useState([])
   const [filteredCountries, setFilteredCountries] = useState([])

@@ -1,5 +1,5 @@
-import { useLocation } from 'https://cdn.skypack.dev/wouter@2.7.5'
-import { useState, useEffect } from 'https://cdn.skypack.dev/react@v17.0.1'
+import { useLocation } from 'wouter'
+import { useState, useEffect } from 'react'
 
 export function useCountry(country) {
   const [location, setLocation] = useLocation()

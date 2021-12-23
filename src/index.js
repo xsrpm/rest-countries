@@ -1,5 +1,5 @@
-import { StrictMode } from 'https://cdn.skypack.dev/react@v17.0.1'
-import ReactDom from 'https://cdn.skypack.dev/react-dom@v17.0.1'
+import { StrictMode } from 'react'
+import ReactDom from 'react-dom'
 import { App } from './App'
 
 ReactDom.render(
