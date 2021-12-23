@@ -1,4 +1,5 @@
-import { Switch, Route } from 'wouter'
+import { Router, Switch, Route } from 'wouter'
+
 import { Country } from '../Pages/Country'
 import { Header } from '../Components/Header'
 import { Home } from '../Pages/Home'

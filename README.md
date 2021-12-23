@@ -71,6 +71,9 @@ Users should be able to:
 - https://blog.logrocket.com/an-introduction-to-wouter-a-react-router-alternative/
 - https://restcountries.com/
 - https://usehooks.com/useLocalStorage/
+- https://create-react-app.dev/docs/deployment/#github-pages
+- https://www.freecodecamp.org/news/deploy-a-react-app-to-github-pages/
+- https://github.com/molefrog/wouter#customizing-the-location-hook
 
 ## Author
 
