@@ -6,7 +6,7 @@ export function useCountry(country) {
   const [countryData, setCountryData] = useState(null)
   const [countryBorders, setCountryBorders] = useState(null)
   useEffect(() => {
-    fetch(`https://restcountries.com/v3.1/name/${country}`)
+    fetch(`https://restcountries.com/v3.1/name/${country}?fullText=true`)
       .then((res) => res.json())
       .then((data) => {
         setCountryData(data[0])
