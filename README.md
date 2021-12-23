@@ -60,6 +60,7 @@ Users should be able to:
 - useLocalStorage
 - Wouter
 - Dark/Light style theme
+- Deploy routed app to github pages / hash routing
 
 ### Useful resources
 
