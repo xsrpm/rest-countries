@@ -38,8 +38,8 @@ Users should be able to:
 
 ### Links
 
-- [Solution URL](https://your-solution-url.com)
-- [Live Site URL](https://your-live-site-url.com)
+- [Solution URL](https://github.com/xsrpm/rest-countries)
+- [Live Site URL](https://xsrpm.github.io/rest-countries/)
 
 ## My process
 
@@ -60,6 +60,7 @@ Users should be able to:
 - useLocalStorage
 - Wouter
 - Dark/Light style theme
+- Deploy routed app to github pages / hash routing
 
 ### Useful resources
 
