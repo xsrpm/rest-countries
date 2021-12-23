@@ -26,7 +26,7 @@ export function Country({ params }) {
   if (countryData === null) return <div>Loading...</div>
   return (
     <main className={style.Country}>
-      <button className='button' onClick={() => setLocation('/')}>
+      <button onClick={() => setLocation('/')}>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           width='24'
@@ -96,9 +96,7 @@ export function Country({ params }) {
                       href={'/country/' + country.name.common}
                     >
                       <a href=''>
-                        <button className='button'>
-                          {country.name.common}
-                        </button>
+                        <button>{country.name.common}</button>
                       </a>
                     </Link>
                   ))}

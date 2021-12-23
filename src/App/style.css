@@ -6,23 +6,49 @@
 }
 
 :root {
-  /*Neutral*/
-  --DarkBlue-DarkModeElements: hsl(209, 23%, 22%);
-  --VeryDarkBlue-DarkModeBackground: hsl(207, 26%, 17%);
+  /*LightMode*/
   --VeryDarkBlue-LightModeText: hsl(200, 15%, 8%);
   --DarkGray-LightModeInput: hsl(0, 0%, 52%);
   --VeryLightGray-LightModeBackground: hsl(0, 0%, 98%);
   --White-DarkModeTextYLightModeElements: hsl(0, 0%, 100%);
+  --DarkBlue-DarkModeElements: hsl(209, 23%, 22%);
+  --VeryDarkBlue-DarkModeBackground: hsl(207, 26%, 17%);
   --MobileBodyPaddingInline: clamp(16px, 4%, 80px);
   --DesktopBodyPaddingInline: clamp(16px, 5.6%, 80px);
 
   font-size: 62.5%;
   font-family: 'Nunito Sans', sans-serif;
-  color: var(--VeryDarkBlue-LightModeText);
+}
+
+::placeholder {
+  color: inherit;
+}
+
+svg {
+  fill: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 body {
   background-color: var(--VeryLightGray-LightModeBackground);
+  color: var(--VeryDarkBlue-LightModeText);
+  fill: var(--VeryDarkBlue-LightModeText);
+}
+body.darkMode {
+  background-color: var(--VeryDarkBlue-DarkModeBackground);
+  color: var(--White-DarkModeTextYLightModeElements);
+  fill: var(--White-DarkModeTextYLightModeElements);
+}
+input {
+  color: var(--DarkGray-LightModeInput);
+  background-color: transparent;
+}
+input.darkMode {
+  color: var(--White-DarkModeTextYLightModeElements);
 }
 
 .element {
@@ -30,8 +56,12 @@ body {
   box-shadow: -1px 2px 5px 5px rgb(189 180 180 / 8%);
   border-radius: 5px;
 }
+.element.darkMode {
+  background-color: var(--DarkBlue-DarkModeElements);
+  color: var(--White-DarkModeTextYLightModeElements);
+}
 
-.button {
+button {
   background-color: var(--White-DarkModeTextYLightModeElements);
   box-shadow: 0px 0px 5px 3px rgb(21 21 21 / 8%);
   border-radius: 2px;
@@ -43,12 +73,15 @@ body {
   font-weight: 600;
   cursor: pointer;
 }
+button.darkMode {
+  background-color: var(--DarkBlue-DarkModeElements);
+  color: var(--White-DarkModeTextYLightModeElements);
+}
 
-.button:hover {
+button:hover {
   box-shadow: inset 0px 0px 5px 3px rgb(21 21 21 / 8%);
 }
 
-a {
-  text-decoration: none;
-  color: var(--VeryDarkBlue-LightModeText);
+button.darkMode:hover {
+  background-color: var(--DarkGray-LightModeInput);
 }
