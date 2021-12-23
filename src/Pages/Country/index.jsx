@@ -1,5 +1,6 @@
 import { Link } from 'https://cdn.skypack.dev/wouter@2.7.5'
 import style from './style.module.css'
+import { useCountry } from './useCountry'
 export function Country({ params, styleTheme }) {
   const [countryData, setLocation, countryBorders] = useCountry(params.country)
   if (countryData === null) return <div>Loading...</div>
