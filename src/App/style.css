@@ -38,11 +38,13 @@ body {
   color: var(--VeryDarkBlue-LightModeText);
   fill: var(--VeryDarkBlue-LightModeText);
 }
+
 body.darkMode {
   background-color: var(--VeryDarkBlue-DarkModeBackground);
   color: var(--White-DarkModeTextYLightModeElements);
   fill: var(--White-DarkModeTextYLightModeElements);
 }
+
 input {
   color: var(--DarkGray-LightModeInput);
   background-color: transparent;
@@ -59,6 +61,7 @@ input.darkMode {
 .element.darkMode {
   background-color: var(--DarkBlue-DarkModeElements);
   color: var(--White-DarkModeTextYLightModeElements);
+  box-shadow: unset;
 }
 
 button {

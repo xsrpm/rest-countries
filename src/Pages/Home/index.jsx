@@ -5,14 +5,18 @@ import style from './style.module.css'
 import { useHome } from './useHome'
 import { Link } from 'https://cdn.skypack.dev/wouter@2.7.5'
 
-export function Home({ params }) {
+export function Home({ params, styleTheme }) {
   const [filteredCountries, onChangeInputSearch, inputSearch] = useHome(
     params.region
   )
   return (
     <main className={style.Home}>
-      <Search inputSearch={inputSearch} onChange={onChangeInputSearch} />
-      <Filter />
+      <Search
+        inputSearch={inputSearch}
+        onChange={onChangeInputSearch}
+        styleTheme={styleTheme}
+      />
+      <Filter styleTheme={styleTheme} />
       <ul className={style.ulList}>
         {filteredCountries.map((country) => (
           <Link
@@ -26,6 +30,7 @@ export function Home({ params }) {
                 population={country.population}
                 region={country.region}
                 capital={country.capital}
+                styleTheme={styleTheme}
               />
             </a>
           </Link>

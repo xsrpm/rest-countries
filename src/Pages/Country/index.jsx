@@ -1,32 +1,14 @@
-import { useState, useEffect } from 'https://cdn.skypack.dev/react@v17.0.1'
-import { Link, useLocation } from 'https://cdn.skypack.dev/wouter@2.7.5'
+import { Link } from 'https://cdn.skypack.dev/wouter@2.7.5'
 import style from './style.module.css'
-export function Country({ params }) {
-  const [location, setLocation] = useLocation()
-  const [countryData, setCountryData] = useState(null)
-  const [countryBorders, setCountryBorders] = useState(null)
-  useEffect(() => {
-    fetch(`https://restcountries.com/v3.1/name/${params.country}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setCountryData(data[0])
-        /** begin country borders fetch */
-        if (data[0].borders) {
-          fetch(
-            `https://restcountries.com/v3.1/alpha?codes=${data[0].borders.join()}`
-          )
-            .then((res) => res.json())
-            .then((borders) => {
-              setCountryBorders(borders)
-            })
-        }
-        /** end country borders fetch */
-      })
-  }, [params])
+export function Country({ params, styleTheme }) {
+  const [countryData, setLocation, countryBorders] = useCountry(params.country)
   if (countryData === null) return <div>Loading...</div>
   return (
     <main className={style.Country}>
-      <button onClick={() => setLocation('/')}>
+      <button
+        className={styleTheme === 'light' ? '' : 'darkMode'}
+        onClick={() => setLocation('/')}
+      >
         <svg
           xmlns='http://www.w3.org/2000/svg'
           width='24'
@@ -96,7 +78,11 @@ export function Country({ params }) {
                       href={'/country/' + country.name.common}
                     >
                       <a href=''>
-                        <button>{country.name.common}</button>
+                        <button
+                          className={styleTheme === 'light' ? '' : 'darkMode'}
+                        >
+                          {country.name.common}
+                        </button>
                       </a>
                     </Link>
                   ))}

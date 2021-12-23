@@ -2,7 +2,7 @@ import { useRef } from 'https://cdn.skypack.dev/react@v17.0.1'
 import { Link } from 'https://cdn.skypack.dev/wouter@2.7.5'
 import style from './style.module.css'
 
-export function Filter() {
+export function Filter({ styleTheme }) {
   const listRef = useRef(null)
   const onClick = (e) => {
     listRef.current.classList.toggle(style.show)
@@ -11,7 +11,14 @@ export function Filter() {
     <article className={style.filter}>
       <section
         onClick={onClick}
-        className={'element ' + style.width200 + ' ' + style.buttonFilter}
+        className={
+          'element ' +
+          style.width200 +
+          ' ' +
+          style.buttonFilter +
+          ' ' +
+          (styleTheme === 'light' ? '' : 'darkMode')
+        }
       >
         <span>Filter by Region</span>
         <svg
@@ -25,7 +32,14 @@ export function Filter() {
       </section>
       <ul
         ref={listRef}
-        className={'element ' + style.width200 + ' ' + style.listFilter}
+        className={
+          'element ' +
+          style.width200 +
+          ' ' +
+          style.listFilter +
+          ' ' +
+          (styleTheme === 'light' ? '' : 'darkMode')
+        }
       >
         <li>
           <Link href='/'>Africa</Link>

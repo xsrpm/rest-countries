@@ -1,8 +1,15 @@
 import styles from './style.module.css'
 
-export function Search({ inputSearch, onChange }) {
+export function Search({ inputSearch, onChange, styleTheme }) {
   return (
-    <article className={'element ' + styles.search}>
+    <article
+      className={
+        'element ' +
+        (styleTheme === 'light' ? '' : 'darkMode') +
+        ' ' +
+        styles.search
+      }
+    >
       <svg
         fill='#000000'
         xmlns='http://www.w3.org/2000/svg'
@@ -15,6 +22,7 @@ export function Search({ inputSearch, onChange }) {
       </svg>
       <input
         type='text'
+        className={styleTheme === 'light' ? '' : 'darkMode'}
         placeholder='Search for a country...'
         value={inputSearch}
         onChange={onChange}

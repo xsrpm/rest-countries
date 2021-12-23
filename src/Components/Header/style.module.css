@@ -21,6 +21,10 @@ header p {
   gap: 10px;
 }
 
+header p:hover {
+  cursor: pointer;
+}
+
 header svg {
   width: 12.5px;
   height: 12.5px;

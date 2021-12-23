@@ -5,7 +5,8 @@ export function CountryItem({
   flag,
   population,
   region,
-  capital
+  capital,
+  styleTheme
 }) {
   return (
     <article
@@ -15,7 +16,9 @@ export function CountryItem({
         ' ' +
         style.height336 +
         ' ' +
-        style.width264
+        style.width264 +
+        ' ' +
+        (styleTheme === 'light' ? '' : 'darkMode')
       }
     >
       <picture>
