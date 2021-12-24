@@ -29,7 +29,6 @@
   padding-block: 20px;
   padding-inline: 24px;
   list-style: none;
-  block-size: 144px;
   align-items: flex-start;
   flex-direction: column;
   justify-content: space-between;
@@ -38,6 +37,25 @@
   position: absolute;
 }
 
+.filter li {
+  width: 100%;
+}
+
+.filter li:hover {
+  box-shadow: -1px 2px 5px 5px rgb(189 180 180 / 8%);
+}
+
 .width200 {
   inline-size: 200px;
+}
+
+@media screen and (min-width: 768px) {
+  .buttonFilter {
+    padding-block-start: 19px;
+    font-size: 1.35rem;
+  }
+
+  .listFilter {
+    gap: 15px;
+  }
 }
