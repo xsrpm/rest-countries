@@ -6,12 +6,14 @@ export function useCountry(country) {
   const [countryData, setCountryData] = useState(null)
   const [countryBorders, setCountryBorders] = useState(null)
   useEffect(() => {
-    fetch(`https://restcountries.com/v3.1/name/${country}?fullText=true`)
+    fetch(
+      `https://restcountries.com/v3.1/name/${country}?fullText=true&fields=name,flags,population,region,subregion,capital,tld,currencies,languages,borders`
+    )
       .then((res) => res.json())
       .then((data) => {
         setCountryData(data[0])
         /** begin country borders fetch */
-        if (data[0].borders) {
+        if (data[0].borders.length > 0) {
           fetch(
             `https://restcountries.com/v3.1/alpha?codes=${data[0].borders.join()}`
           )

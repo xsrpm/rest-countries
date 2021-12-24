@@ -1,8 +1,14 @@
-import { useRef } from 'react'
-import { Link } from 'wouter'
+import { Link, useLocation } from 'wouter'
 import style from './style.module.css'
 
 export function Filter({ styleTheme }) {
+  const [location, setLocation] = useLocation()
+  let region
+  if (location !== '/') {
+    region = location.slice(8)
+    region = region[0].toUpperCase() + region.slice(1)
+  }
+
   return (
     <article className={style.filter}>
       <section
@@ -15,7 +21,12 @@ export function Filter({ styleTheme }) {
           (styleTheme === 'light' ? '' : 'darkMode')
         }
       >
-        <span>Filter by Region</span>
+        {location === '/' ? (
+          <span>Filter by Region</span>
+        ) : (
+          <span>{region}</span>
+        )}
+
         <svg
           xmlns='http://www.w3.org/2000/svg'
           width='24'
@@ -36,7 +47,10 @@ export function Filter({ styleTheme }) {
         }
       >
         <li>
-          <Link href='/'>Africa</Link>
+          <Link href='/'>All</Link>
+        </li>
+        <li>
+          <Link href='/region/africa'>Africa</Link>
         </li>
         <li>
           <Link href='/region/america'>America</Link>

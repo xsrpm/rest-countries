@@ -4,7 +4,11 @@ export function useHome(region) {
   const [filteredCountries, setFilteredCountries] = useState([])
   const [inputSearch, setInputSearch] = useState('')
   useEffect(() => {
-    fetch('https://restcountries.com/v3.1/region/' + region)
+    let cad = ''
+    if (region) cad = `https://restcountries.com/v3.1/region/${region}`
+    else cad = 'https://restcountries.com/v3.1/all'
+    cad = cad + '?fields=name,flags,capital,population,region'
+    fetch(cad)
       .then((response) => response.json())
       .then((data) => {
         setInputSearch('')

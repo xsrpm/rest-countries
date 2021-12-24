@@ -21,7 +21,7 @@ export function App() {
           {(params) => <Country styleTheme={styleTheme} params={params} />}
         </Route>
         <Route path='/'>
-          {() => <Home styleTheme={styleTheme} params={{ region: 'africa' }} />}
+          {() => <Home styleTheme={styleTheme} params={{}} />}
         </Route>
         <Route>404, Not Found!</Route>
       </Switch>
