@@ -24,6 +24,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
+    padding-block-start: 48px;
   }
 
   .Home > article:nth-of-type(2) {
