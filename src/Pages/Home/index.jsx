@@ -16,19 +16,22 @@ export function Home({ params, styleTheme }) {
         styleTheme={styleTheme}
       />
       <Filter styleTheme={styleTheme} />
-      <ul className={style.ulList}>
-        {filteredCountries.map((country) => (
-          <CountryItem
-            key={country.name.common}
-            countryName={country.name.common}
-            flag={country.flags.svg}
-            population={country.population}
-            region={country.region}
-            capital={country.capital}
-            styleTheme={styleTheme}
-          />
+      {(!filteredCountries && <div>Loading...</div>) ||
+        (filteredCountries && (
+          <ul className={style.ulList}>
+            {filteredCountries.map((country) => (
+              <CountryItem
+                key={country.name.common}
+                countryName={country.name.common}
+                flag={country.flags.svg}
+                population={country.population}
+                region={country.region}
+                capital={country.capital}
+                styleTheme={styleTheme}
+              />
+            ))}
+          </ul>
         ))}
-      </ul>
     </main>
   )
 }

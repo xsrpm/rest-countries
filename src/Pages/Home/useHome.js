@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 export function useHome(region) {
-  const [countries, setCountries] = useState([])
-  const [filteredCountries, setFilteredCountries] = useState([])
+  const [countries, setCountries] = useState(null)
+  const [filteredCountries, setFilteredCountries] = useState(null)
   const [inputSearch, setInputSearch] = useState('')
   useEffect(() => {
     let cad = ''
