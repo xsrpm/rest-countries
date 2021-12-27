@@ -2,7 +2,7 @@ import styles from './style.module.css'
 
 export function Search({ inputSearch, onChange, styleTheme }) {
   return (
-    <article
+    <div
       className={
         'element ' +
         (styleTheme === 'light' ? '' : 'darkMode') +
@@ -27,6 +27,6 @@ export function Search({ inputSearch, onChange, styleTheme }) {
         value={inputSearch}
         onChange={onChange}
       />
-    </article>
+    </div>
   )
 }

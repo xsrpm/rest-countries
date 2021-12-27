@@ -9,7 +9,7 @@ export function CountryItem({
   styleTheme
 }) {
   return (
-    <article
+    <div
       className={
         'element ' +
         style.CountryItem +
@@ -43,6 +43,6 @@ export function CountryItem({
           <span>{capital}</span>
         </p>
       </section>
-    </article>
+    </div>
   )
 }
