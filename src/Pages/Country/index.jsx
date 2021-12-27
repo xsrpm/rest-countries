@@ -68,7 +68,7 @@ export function Country({ params, styleTheme }) {
               <span>{Object.values(countryData.languages).join(', ')}</span>
             </li>
           </ul>
-          {countryData.borders && (
+          {countryData.length > 0 && (
             <div>
               <h3>Border Countries:</h3>
               <div>

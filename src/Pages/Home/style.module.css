@@ -27,7 +27,7 @@
     padding-block-start: 48px;
   }
 
-  .Home > article:nth-of-type(2) {
+  .Home > :nth-of-type(2) {
     justify-self: end;
   }
 
