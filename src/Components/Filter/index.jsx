@@ -46,24 +46,29 @@ export function Filter({ styleTheme }) {
           (styleTheme === 'light' ? '' : 'darkMode')
         }
       >
-        <Link href='/'>
-          <li>All</li>
-        </Link>
-        <Link href='/region/africa'>
-          <li>Africa</li>
-        </Link>
-        <Link href='/region/america'>
-          <li>America</li>
-        </Link>
-        <Link href='/region/asia'>
-          <li>Asia</li>
-        </Link>
-        <Link href='/region/europe'>
-          <li>Europa</li>
-        </Link>
-        <Link href='/region/oceania'>
-          <li>Oceania</li>
-        </Link>
+        <li>
+          <Link href='/'>All </Link>
+        </li>
+
+        <li>
+          <Link href='/region/africa'>Africa </Link>
+        </li>
+
+        <li>
+          <Link href='/region/america'>America</Link>
+        </li>
+
+        <li>
+          <Link href='/region/asia'>Asia</Link>
+        </li>
+
+        <li>
+          <Link href='/region/europe'>Europa</Link>
+        </li>
+
+        <li>
+          <Link href='/region/oceania'>Oceania</Link>
+        </li>
       </ul>
     </div>
   )

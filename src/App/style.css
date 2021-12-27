@@ -88,3 +88,7 @@ button:hover {
 button.darkMode:hover {
   background-color: var(--DarkGray-LightModeInput);
 }
+
+li {
+  list-style: none;
+}

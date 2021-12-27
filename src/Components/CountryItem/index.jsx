@@ -1,3 +1,4 @@
+import { Link } from 'wouter'
 import style from './style.module.css'
 
 export function CountryItem({
@@ -9,7 +10,7 @@ export function CountryItem({
   styleTheme
 }) {
   return (
-    <div
+    <li
       className={
         'element ' +
         style.CountryItem +
@@ -21,28 +22,32 @@ export function CountryItem({
         (styleTheme === 'light' ? '' : 'darkMode')
       }
     >
-      <picture>
-        <img
-          className={style.width264 + ' ' + style.height160}
-          src={flag}
-          alt={'Flag of ' + countryName}
-        />
-      </picture>
-      <section>
-        <h2>{countryName}</h2>
-        <p>
-          <span>Population: </span>
-          <span>{population}</span>
-        </p>
-        <p>
-          <span>Region: </span>
-          <span>{region}</span>
-        </p>
-        <p>
-          <span>Capital: </span>
-          <span>{capital}</span>
-        </p>
-      </section>
-    </div>
+      <Link href={'/country/' + countryName}>
+        <a href=''>
+          <picture>
+            <img
+              className={style.width264 + ' ' + style.height160}
+              src={flag}
+              alt={'Flag of ' + countryName}
+            />
+          </picture>
+          <section>
+            <h2>{countryName}</h2>
+            <p>
+              <span>Population: </span>
+              <span>{population}</span>
+            </p>
+            <p>
+              <span>Region: </span>
+              <span>{region}</span>
+            </p>
+            <p>
+              <span>Capital: </span>
+              <span>{capital}</span>
+            </p>
+          </section>
+        </a>
+      </Link>
+    </li>
   )
 }
