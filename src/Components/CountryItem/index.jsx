@@ -22,7 +22,7 @@ export function CountryItem({
         (styleTheme === 'light' ? '' : 'darkMode')
       }
     >
-      <Link href={'/country/' + countryName}>
+      <Link href={'/country/' + encodeURI(countryName)}>
         <a href=''>
           <picture>
             <img
