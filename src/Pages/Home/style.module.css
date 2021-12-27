@@ -3,11 +3,11 @@
   padding-block-start: 24px;
 }
 
-.Home > article:first-of-type {
+.Home > :first-of-type {
   margin-block-end: 40px;
 }
 
-.Home > article:nth-of-type(2) {
+.Home > :nth-of-type(2) {
   margin-block-end: 32px;
 }
 
